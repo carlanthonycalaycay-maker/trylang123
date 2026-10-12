@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fictional neighborhood café website built for hosting practice.">
+  <title>Corner Table — Coffee &amp; Breakfast</title>
+  <style>
+    :root { color-scheme: light; --paper: #f5f2e9; --ink: #253d32; --muted: #62665d; --line: #d4d5c6; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 Georgia, 'Times New Roman', serif; }
+    a { color: inherit; text-underline-offset: 5px; }
+    a:focus-visible { outline: 3px solid #a45b32; outline-offset: 5px; }
+    .page { max-width: 1040px; margin: auto; padding: 0 32px; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 25px 0; border-bottom: 1px solid var(--line); }
+    .brand { font-size: 24px; font-weight: bold; text-decoration: none; }
+    nav { display: flex; gap: 25px; font-size: 16px; }
+    nav a { text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .hero { padding: 85px 0 75px; max-width: 750px; }
+    .eyebrow { font: 12px/1.5 Verdana, sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+    h1 { font-size: clamp(48px, 7vw, 82px); line-height: 1.06; font-weight: normal; letter-spacing: -2px; margin: 22px 0; }
+    .intro { max-width: 480px; color: var(--muted); font-size: 20px; }
+    .button { display: inline-block; margin-top: 15px; padding: 11px 23px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 16px; }
+    .button:hover { background: #3a5545; }
+    .menu { border-top: 1px solid var(--line); padding: 36px 0 48px; scroll-margin-top: 20px; }
+    .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; }
+    h2 { font-size: 33px; font-weight: normal; margin: 0 0 24px; }
+    .section-heading p { color: var(--muted); font-size: 14px; }
+    .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 70px; }
+    .item { padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .item-top { display: flex; justify-content: space-between; gap: 15px; }
+    h3 { font-size: 19px; margin: 0; font-weight: normal; }
+    .item p { font-size: 15px; color: var(--muted); margin: 5px 0 0; }
+    .visit { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 38px 0 50px; border-top: 1px solid var(--line); }
+    .visit p { margin: 5px 0; color: var(--muted); }
+    .hours { margin: 0; }
+    .hours div { display: flex; justify-content: space-between; gap: 20px; padding: 7px 0; }
+    .hours dd { margin: 0; }
+    footer { border-top: 1px solid var(--line); padding: 22px 0 30px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 600px) {
+      .page { padding: 0 22px; }
+      header { gap: 15px; }
+      .brand { font-size: 21px; }
+      nav { gap: 16px; font-size: 14px; }
+      .hero { padding: 55px 0; }
+      .menu-grid, .visit { grid-template-columns: 1fr; gap: 25px; }
+      .menu-grid { gap: 0; }
+      .section-heading { display: block; }
+      .section-heading h2 { margin-bottom: 0; }
+      .section-heading p { margin-bottom: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="#">Corner Table.</a>
+      <nav aria-label="Main navigation"><a href="#menu">Menu</a><a href="#visit">Visit us</a></nav>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="welcome">
+        <p class="eyebrow">Coffee &amp; breakfast · Since 2024</p>
+        <h1 id="welcome">A good morning<br>starts here.</h1>
+        <p class="intro">Fresh coffee, warm toast, and a little time to yourself. Your neighborhood table is ready.</p>
+        <a class="button" href="#menu">See the menu</a>
+      </section>
+      <section class="menu" id="menu" aria-labelledby="menu-title">
+        <div class="section-heading"><h2 id="menu-title">A few favorites</h2><p>Made fresh. Served simply. Prices in PHP.</p></div>
+        <div class="menu-grid">
+          <article class="item"><div class="item-top"><h3>House coffee</h3><span>₱100</span></div><p>A smooth, freshly brewed cup.</p></article>
+          <article class="item"><div class="item-top"><h3>Butter &amp; jam toast</h3><span>₱120</span></div><p>Thick-cut bread with butter and strawberry jam.</p></article>
+          <article class="item"><div class="item-top"><h3>Iced latte</h3><span>₱140</span></div><p>Espresso, milk, and plenty of ice.</p></article>
+          <article class="item"><div class="item-top"><h3>Eggs on toast</h3><span>₱180</span></div><p>Soft scrambled eggs with a pinch of chives.</p></article>
+        </div>
+      </section>
+      <section class="visit" id="visit" aria-labelledby="visit-title">
+        <div><h2 id="visit-title">Come by sometime.</h2><p>12 Garden Street, Sample Town</p><p>Walk in, find a seat, stay a while.</p></div>
+        <dl class="hours"><div><dt>Monday–Friday</dt><dd>7 am–5 pm</dd></div><div><dt>Saturday</dt><dd>8 am–5 pm</dd></div><div><dt>Sunday</dt><dd>8 am–2 pm</dd></div></dl>
+      </section>
+    </main>
+    <footer>Corner Table · A fictional café website for hosting practice.</footer>
+  </div>
+</body>
+</html>
